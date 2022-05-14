@@ -21,4 +21,9 @@ defmodule ExrestWeb.PostController do
         conn |> render("error", %{error: Utils.internal_server_error()})
     end
   end
+
+  def get_all(conn, _params) do
+    conn |> render("data.json", %{success: true, data: Posts.list_posts()})
+  end
+
 end

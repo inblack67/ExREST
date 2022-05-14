@@ -2,6 +2,7 @@ defmodule Exrest.Posts.Post do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @derive {Jason.Encoder, except: [:__meta__]}
   schema "posts" do
     field :content, :string
     field :desc, :string
